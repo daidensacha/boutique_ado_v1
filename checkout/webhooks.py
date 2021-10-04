@@ -13,6 +13,7 @@ import stripe
 def webhook(request):
     """Listen for webhooks from Stripe"""
     # Setup
+    print("webhook")
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -34,8 +35,8 @@ def webhook(request):
     except Exception as e:
         return HttpResponse(content=e, status=400)
 
-    print('Success!')
-    return HttpResponse(status=200)
+    # print('Success!')
+    # return HttpResponse(status=200)
 
     # Set up a webhook handler
     handler = StripeWH_Handler(request)
