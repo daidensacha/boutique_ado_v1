@@ -8,3 +8,5 @@ node_modules/
 .github/
 *.sqlite3
 *.pyc
+output.dot
+output.png
